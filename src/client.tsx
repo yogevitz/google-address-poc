@@ -6,7 +6,7 @@ import { wixAxiosConfig } from '@wix/wix-axios-config';
 import i18n from './i18n';
 import App from './components/App';
 import { create as createFedopsLogger } from '@wix/fedops-logger';
-import { strToAddressFields } from './utils';
+import { strToAddressFields, fmtToAddressFields } from './utils';
 
 const baseURL = window.__BASEURL__;
 const locale = window.__LOCALE__;
@@ -19,17 +19,20 @@ const fedopsLogger = createFedopsLogger('google-address-poc');
 // See https://github.com/wix-private/fed-infra/blob/master/fedops/fedops-logger/README.md
 fedopsLogger.appLoaded();
 
-const getAddressFields = async () => {
+const getAddressFields = async (country: string) => {
   const res = await axios.get(
-    'https://www.gstatic.com/chrome/autofill/libaddressinput/chromium-i18n/ssl-address/data/US',
+    `https://www.gstatic.com/chrome/autofill/libaddressinput/chromium-i18n/ssl-address/data/${country}`,
   );
-  const { require } = res.data;
-  console.log('require', require);
-  const requiredFields = strToAddressFields(require);
-  console.log('requiredFields', requiredFields);
+  const { require, fmt } = res.data;
+
+  const requiredFields = require ? strToAddressFields(require) : null;
+  console.log({ require, requiredFields });
+
+  const possibleFields = fmt ? fmtToAddressFields(fmt) : null;
+  console.log({ fmt, possibleFields });
 };
 
-getAddressFields();
+getAddressFields('US');
 
 ReactDOM.render(
   <Suspense fallback="...loading">

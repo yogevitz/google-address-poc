@@ -1,9 +1,24 @@
-import { ADDRESS_LETTERS, CodeLetters } from './types';
+import {
+  ADDRESS_CODE_LETTERS,
+  ADDRESS_LETTERS,
+  AddressCodeLetters,
+} from './types';
 
-export const strToAddressFields = (str: any) => {
-  const map = Array.prototype.map;
-  return map.call(str, codeLetterToAddressField);
-};
+export const strToAddressFields = (str: string) =>
+  Array.prototype.map.call(str, codeLetterToAddressField);
 
-const codeLetterToAddressField = (letter: CodeLetters) =>
+const codeLetterToAddressField = (letter: AddressCodeLetters) =>
   ADDRESS_LETTERS[letter];
+
+export const fmtToAddressFields = (fmt: string) => {
+  return fmt
+    .split('%')
+    .filter(
+      (subStr) =>
+        subStr.length &&
+        ADDRESS_CODE_LETTERS.includes(subStr[0]) &&
+        (subStr.length === 1 || !subStr[1].match(/[a-zA-Z0-9]/g)),
+    )
+    .map((subStr) => (subStr.length === 1 ? subStr : subStr[0]))
+    .map((char) => codeLetterToAddressField(char as AddressCodeLetters));
+};

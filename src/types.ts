@@ -11,7 +11,8 @@
  X – Sorting code
  */
 
-export type CodeLetters = 'N' | 'O' | 'A' | 'D' | 'C' | 'S' | 'Z' | 'X';
+export const ADDRESS_CODE_LETTERS = ['N', 'O', 'A', 'D', 'C', 'S', 'Z', 'X'];
+export type AddressCodeLetters = 'N' | 'O' | 'A' | 'D' | 'C' | 'S' | 'Z' | 'X';
 
 export const ADDRESS_FIELDS = {
   NAME: 'NAME',
@@ -24,7 +25,7 @@ export const ADDRESS_FIELDS = {
   SORTING_CODE: 'SORTING_CODE',
 };
 
-export const ADDRESS_LETTERS: Record<CodeLetters, string> = {
+export const ADDRESS_LETTERS: Record<AddressCodeLetters, string> = {
   N: ADDRESS_FIELDS.NAME,
   O: ADDRESS_FIELDS.ORGANIZATION,
   A: ADDRESS_FIELDS.STREET_ADDRESS_LINES,
