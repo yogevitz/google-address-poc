@@ -7,8 +7,8 @@ import {
 export const strToAddressFields = (str: string) =>
   Array.prototype.map.call(str, codeLetterToAddressField);
 
-export const fmtToAddressFields = (fmt: string) => {
-  return fmt
+export const fmtToAddressFields = (fmt: string) =>
+  fmt
     .split('%')
     .filter(
       (subStr) =>
@@ -18,7 +18,8 @@ export const fmtToAddressFields = (fmt: string) => {
     )
     .map((subStr) => (subStr.length === 1 ? subStr : subStr[0]))
     .map((char) => codeLetterToAddressField(char as AddressCodeLetters));
-};
+
+export const mapSubNames = (subNames: string) => subNames.split('~');
 
 const codeLetterToAddressField = (letter: AddressCodeLetters) =>
   ADDRESS_LETTERS[letter];

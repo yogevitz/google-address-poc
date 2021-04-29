@@ -6,7 +6,7 @@ import { wixAxiosConfig } from '@wix/wix-axios-config';
 import i18n from './i18n';
 import App from './components/App';
 import { create as createFedopsLogger } from '@wix/fedops-logger';
-import { strToAddressFields, fmtToAddressFields } from './utils';
+import { strToAddressFields, fmtToAddressFields, mapSubNames } from './utils';
 
 const baseURL = window.__BASEURL__;
 const locale = window.__LOCALE__;
@@ -23,16 +23,17 @@ const getAddressFields = async (country: string) => {
   const res = await axios.get(
     `https://chromium-i18n.appspot.com/ssl-address/data/${country}`,
   );
-  const { require, fmt } = res.data;
-
-  const requiredFields = require ? strToAddressFields(require) : null;
-  console.log({ require, requiredFields });
-
-  const possibleFields = fmt ? fmtToAddressFields(fmt) : null;
-  console.log({ fmt, possibleFields });
+  const { require, fmt, sub_names, state_name_type, zip } = res.data;
+  const address: any = {};
+  address.requiredFields = require ? strToAddressFields(require) : null;
+  address.possibleFields = fmt ? fmtToAddressFields(fmt) : null;
+  address.administrativeAreaType = state_name_type || 'province';
+  address.subNames = sub_names ? mapSubNames(sub_names) : null;
+  address.zipFormat = zip ? new RegExp(zip, 'g') : null;
+  console.log(address);
 };
 
-getAddressFields('US');
+getAddressFields('IL');
 
 ReactDOM.render(
   <Suspense fallback="...loading">
