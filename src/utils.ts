@@ -7,9 +7,6 @@ import {
 export const strToAddressFields = (str: string) =>
   Array.prototype.map.call(str, codeLetterToAddressField);
 
-const codeLetterToAddressField = (letter: AddressCodeLetters) =>
-  ADDRESS_LETTERS[letter];
-
 export const fmtToAddressFields = (fmt: string) => {
   return fmt
     .split('%')
@@ -22,3 +19,6 @@ export const fmtToAddressFields = (fmt: string) => {
     .map((subStr) => (subStr.length === 1 ? subStr : subStr[0]))
     .map((char) => codeLetterToAddressField(char as AddressCodeLetters));
 };
+
+const codeLetterToAddressField = (letter: AddressCodeLetters) =>
+  ADDRESS_LETTERS[letter];

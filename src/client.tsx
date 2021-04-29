@@ -21,7 +21,7 @@ fedopsLogger.appLoaded();
 
 const getAddressFields = async (country: string) => {
   const res = await axios.get(
-    `https://www.gstatic.com/chrome/autofill/libaddressinput/chromium-i18n/ssl-address/data/${country}`,
+    `https://chromium-i18n.appspot.com/ssl-address/data/${country}`,
   );
   const { require, fmt } = res.data;
 
