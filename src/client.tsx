@@ -30,6 +30,8 @@ const getAddressFields = async (country: string) => {
     sub_names,
     sub_lnames,
     zip,
+    lang,
+    languages,
   } = res.data;
   const address: any = {};
   address.requiredFields = require ? strToAddressFields(require) : undefined;
@@ -38,10 +40,12 @@ const getAddressFields = async (country: string) => {
   address.subNames = sub_names ? mapNames(sub_names) : undefined;
   address.subLNames = sub_lnames ? mapNames(sub_lnames) : undefined;
   address.zipFormat = zip ? new RegExp(zip, 'g') : undefined;
+  address.lang = lang;
+  address.languages = languages;
   console.log(address);
 };
 
-getAddressFields('US');
+getAddressFields('CA');
 
 ReactDOM.render(
   <Suspense fallback="...loading">
