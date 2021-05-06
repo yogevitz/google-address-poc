@@ -26,7 +26,6 @@ const getAddressFields = async (country: string) => {
   const {
     require,
     fmt,
-    state_name_type,
     sub_names,
     sub_lnames,
     zip,
@@ -36,7 +35,6 @@ const getAddressFields = async (country: string) => {
   const address: any = {};
   address.requiredFields = require ? strToAddressFields(require) : undefined;
   address.possibleFields = fmt ? fmtToAddressFields(fmt) : undefined;
-  address.administrativeAreaType = state_name_type || 'province';
   address.subNames = sub_names ? mapNames(sub_names) : undefined;
   address.subLNames = sub_lnames ? mapNames(sub_lnames) : undefined;
   address.zipFormat = zip ? new RegExp(zip, 'g') : undefined;
