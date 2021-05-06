@@ -7,6 +7,7 @@ import i18n from './i18n';
 import App from './components/App';
 import { create as createFedopsLogger } from '@wix/fedops-logger';
 import { strToAddressFields, fmtToAddressFields, mapNames } from './utils';
+import { LOCALITY, SUB_LOCALITY } from './types';
 
 const baseURL = window.__BASEURL__;
 const locale = window.__LOCALE__;
@@ -19,9 +20,9 @@ const fedopsLogger = createFedopsLogger('google-address-poc');
 // See https://github.com/wix-private/fed-infra/blob/master/fedops/fedops-logger/README.md
 fedopsLogger.appLoaded();
 
-const getAddressFields = async (country: string) => {
+const getAddressFields = async (countryCode: string) => {
   const res = await axios.get(
-    `https://chromium-i18n.appspot.com/ssl-address/data/${country}`,
+    `https://chromium-i18n.appspot.com/ssl-address/data/${countryCode}`,
   );
   const {
     require,
@@ -37,6 +38,8 @@ const getAddressFields = async (country: string) => {
   address.requiredFields = require ? strToAddressFields(require) : undefined;
   address.possibleFields = fmt ? fmtToAddressFields(fmt) : undefined;
   address.administrativeAreaType = state_name_type || 'province';
+  address.localityType = LOCALITY[countryCode] || LOCALITY.OTHER;
+  address.subLocalityType = SUB_LOCALITY[countryCode] || SUB_LOCALITY.OTHER;
   address.subNames = sub_names ? mapNames(sub_names) : undefined;
   address.subLNames = sub_lnames ? mapNames(sub_lnames) : undefined;
   address.zipFormat = zip ? new RegExp(zip, 'g') : undefined;

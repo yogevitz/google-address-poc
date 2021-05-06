@@ -36,7 +36,7 @@ export const ADDRESS_LETTERS: Record<AddressCodeLetters, string> = {
   X: ADDRESS_FIELDS.SORTING_CODE,
 };
 
-export const LOCALITY = {
+export const LOCALITY: Record<string, string> = {
   TH: 'amphoe/khet', // Thailand
   HK: 'district', // Hong Kong
   TR: 'district', // Turkey
@@ -46,7 +46,7 @@ export const LOCALITY = {
   OTHER: 'locality', // Other
 };
 
-export const SUB_LOCALITY = {
+export const SUB_LOCALITY: Record<string, string> = {
   KR: 'district', // South Korea
   NG: 'local-government-area', // Nigeria
   BR: 'neighborhood', // Brazil
