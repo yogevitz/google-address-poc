@@ -4,6 +4,7 @@
     <list default="true" id="f6a6052b-2d40-41f9-ae24-fc4874c01f43" name="Default Changelist" comment="added mapping for code letters to address fields">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state relative-caret-position="466">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -91,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/types.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="639">
+              <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -117,11 +118,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/types.ts" />
         <option value="$PROJECT_DIR$/src/utils.spec.ts" />
         <option value="$PROJECT_DIR$/src/utils.test.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/utils.ts" />
+        <option value="$PROJECT_DIR$/src/types.ts" />
         <option value="$PROJECT_DIR$/src/client.tsx" />
       </list>
     </option>
@@ -233,12 +234,12 @@
       <workItem from="1620065782874" duration="1000" />
       <workItem from="1620223488226" duration="86000" />
       <workItem from="1620294621504" duration="464000" />
-      <workItem from="1620304449466" duration="1178000" />
+      <workItem from="1620304449466" duration="2267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32938000" />
+    <option name="totallyTimeSpent" value="34027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -265,7 +266,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299539" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50030136" side_tool="true" weight="0.3090909" />
       <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4996986" visible="true" weight="0.19815668" />
@@ -279,6 +280,16 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/../promote/marketing-integration/src/client/gmb/services/location-address.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
       </list>
     </option>
   </component>
@@ -345,15 +356,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/types.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        <state relative-caret-position="639">
+          <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="466">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
